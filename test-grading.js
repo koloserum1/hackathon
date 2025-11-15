@@ -137,9 +137,22 @@ function startGrading() {
     }, 3000);
 }
 
-// Show student detail (placeholder)
+// Show student detail - redirect to detail page
 function showDetail(studentId) {
-    alert(`Detail študenta ${studentId} - Tu by sa zobrazilo detailné hodnotenie s feedbackom pre každú úlohu.`);
+    window.location.href = 'student-detail.html';
+}
+
+// Update total points in Step 4
+function updateTotal() {
+    const inputs = document.querySelectorAll('.points-input-new');
+    let total = 0;
+    inputs.forEach(input => {
+        total += parseInt(input.value) || 0;
+    });
+    const totalElement = document.getElementById('total-points');
+    if (totalElement) {
+        totalElement.textContent = total;
+    }
 }
 
 // Reset demo

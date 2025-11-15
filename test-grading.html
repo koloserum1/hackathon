@@ -139,53 +139,154 @@
                 </div>
                 
                 <div class="config-container">
-                    <div class="test-config-card">
-                        <h3>Základné nastavenia</h3>
-                        <div class="form-group">
-                            <label>Názov testu</label>
-                            <input type="text" value="Test z matematiky - Kvadratické rovnice" class="form-input">
+                    <div class="config-sidebar">
+                        <div class="test-info-card">
+                            <div class="info-icon">📝</div>
+                            <h3>Test z matematiky</h3>
+                            <p class="test-topic">Kvadratické rovnice</p>
+                            <div class="test-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Úlohy</span>
+                                    <span class="stat-value">3</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Body spolu</span>
+                                    <span class="stat-value" id="total-points">20</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Celkový počet bodov</label>
-                            <input type="number" value="20" class="form-input">
+                        
+                        <div class="quick-tips">
+                            <h4>💡 Tipy</h4>
+                            <ul>
+                                <li>Buďte špecifický v kritériách</li>
+                                <li>Rozdeľte body podľa náročnosti</li>
+                                <li>Definujte čiastkové hodnotenie</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="questions-config">
-                        <h3>Konfigurácia úloh</h3>
-                        
-                        <div class="question-item">
-                            <div class="question-header-config">
-                                <span class="q-number">Úloha 1</span>
-                                <input type="number" value="5" class="points-input"> bodov
+                    <div class="config-main">
+                        <div class="questions-config-new">
+                            <div class="question-card">
+                                <div class="question-card-header">
+                                    <div class="question-badge blue">Úloha 1</div>
+                                    <div class="points-config">
+                                        <input type="number" value="5" class="points-input-new" onchange="updateTotal()">
+                                        <span class="points-label">bodov</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="question-preview">
+                                    <p class="question-text">Vyriešte rovnicu: x² + 5x + 6 = 0</p>
+                                </div>
+                                
+                                <div class="rubric-section">
+                                    <label class="rubric-label">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                                        </svg>
+                                        Kritériá hodnotenia
+                                    </label>
+                                    <div class="rubric-items">
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Správny výpočet diskriminantu">
+                                            <input type="number" class="rubric-points" value="2">
+                                        </div>
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Správne korene x₁ a x₂">
+                                            <input type="number" class="rubric-points" value="2">
+                                        </div>
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Správna skúška">
+                                            <input type="number" class="rubric-points" value="1">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <textarea class="rubric-input" placeholder="Kritériá hodnotenia (voliteľné)...">- Správny výpočet diskriminantu (2b)
-- Správne korene x₁ a x₂ (2b)
-- Správna skúška (1b)</textarea>
+                            
+                            <div class="question-card">
+                                <div class="question-card-header">
+                                    <div class="question-badge dark">Úloha 2</div>
+                                    <div class="points-config">
+                                        <input type="number" value="7" class="points-input-new" onchange="updateTotal()">
+                                        <span class="points-label">bodov</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="question-preview">
+                                    <p class="question-text">Vypočítajte diskriminant rovnice: 2x² - 3x + 1 = 0</p>
+                                </div>
+                                
+                                <div class="rubric-section">
+                                    <label class="rubric-label">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                                        </svg>
+                                        Kritériá hodnotenia
+                                    </label>
+                                    <div class="rubric-items">
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Správna substitúcia">
+                                            <input type="number" class="rubric-points" value="2">
+                                        </div>
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Výpočet">
+                                            <input type="number" class="rubric-points" value="3">
+                                        </div>
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Správny výsledok">
+                                            <input type="number" class="rubric-points" value="2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="question-card">
+                                <div class="question-card-header">
+                                    <div class="question-badge blue">Úloha 3</div>
+                                    <div class="points-config">
+                                        <input type="number" value="8" class="points-input-new" onchange="updateTotal()">
+                                        <span class="points-label">bodov</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="question-preview">
+                                    <p class="question-text">Slovná úloha: Obdĺžnik má obvod 24 cm...</p>
+                                </div>
+                                
+                                <div class="rubric-section">
+                                    <label class="rubric-label">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                                        </svg>
+                                        Kritériá hodnotenia
+                                    </label>
+                                    <div class="rubric-items">
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Správne zostavenie rovnice">
+                                            <input type="number" class="rubric-points" value="3">
+                                        </div>
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Riešenie">
+                                            <input type="number" class="rubric-points" value="3">
+                                        </div>
+                                        <div class="rubric-item">
+                                            <input type="text" class="rubric-criterion" value="Odpoveď so správnou jednotkou">
+                                            <input type="number" class="rubric-points" value="2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="question-item">
-                            <div class="question-header-config">
-                                <span class="q-number">Úloha 2</span>
-                                <input type="number" value="7" class="points-input"> bodov
-                            </div>
-                            <textarea class="rubric-input" placeholder="Kritériá hodnotenia (voliteľné)...">- Správna substitúcia (2b)
-- Výpočet (3b)
-- Správny výsledok (2b)</textarea>
-                        </div>
-                        
-                        <div class="question-item">
-                            <div class="question-header-config">
-                                <span class="q-number">Úloha 3</span>
-                                <input type="number" value="8" class="points-input"> bodov
-                            </div>
-                            <textarea class="rubric-input" placeholder="Kritériá hodnotenia (voliteľné)...">- Správne zostavenie rovnice (3b)
-- Riešenie (3b)
-- Odpoveď so správnou jednotkou (2b)</textarea>
-                        </div>
+                        <button class="primary-btn large" onclick="nextStep()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Uložiť nastavenia
+                        </button>
                     </div>
-                    
-                    <button class="primary-btn" onclick="nextStep()">Uložiť nastavenia</button>
                 </div>
             </div>
 

@@ -197,34 +197,7 @@ body {
 .tool-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-lg);
-}
-
-.blue-card {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    border: none;
-}
-
-.blue-card .card-title {
-    color: hsl(var(--primary-foreground));
-}
-
-.blue-card .card-description {
-    color: hsl(var(--primary-foreground) / 0.9);
-}
-
-.dark-card {
-    background: hsl(var(--foreground));
-    color: hsl(var(--primary-foreground));
-    border: none;
-}
-
-.dark-card .card-title {
-    color: hsl(var(--primary-foreground));
-}
-
-.dark-card .card-description {
-    color: hsl(var(--primary-foreground) / 0.85);
+    border-color: hsl(var(--primary) / 0.2);
 }
 
 .card-header {
@@ -247,19 +220,14 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-.blue-bg {
-    background: hsl(var(--primary-foreground) / 0.2);
+.icon-circle.blue {
+    background: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
 }
 
-.dark-bg {
-    background: hsl(var(--primary-foreground) / 0.15);
+.icon-circle.dark {
+    background: hsl(var(--foreground));
     color: hsl(var(--primary-foreground));
-}
-
-.tool-card:not(.blue-card):not(.dark-card) .icon-circle {
-    background: hsl(var(--muted));
-    color: hsl(var(--primary));
 }
 
 .card-title {
@@ -283,25 +251,12 @@ body {
     border-top: 1px solid hsl(var(--border) / 0.5);
 }
 
-.blue-card .card-footer {
-    border-top-color: hsl(var(--primary-foreground) / 0.2);
-}
-
-.dark-card .card-footer {
-    border-top-color: hsl(var(--primary-foreground) / 0.15);
-}
-
 .card-hint {
     font-size: 0.875rem;
     font-weight: 600;
-    color: hsl(var(--muted-foreground));
+    color: hsl(var(--primary));
     transition: transform 0.2s;
     display: inline-block;
-}
-
-.blue-card .card-hint,
-.dark-card .card-hint {
-    color: hsl(var(--primary-foreground) / 0.8);
 }
 
 .tool-card:hover .card-hint {

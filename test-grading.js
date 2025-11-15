@@ -247,11 +247,15 @@ function startGrading() {
     setTimeout(() => {
         progressItems[1].classList.remove('active');
         progressItems[1].classList.add('completed');
-        progressItems[1].querySelector('.progress-icon').innerHTML = '✓';
+        const icon1 = progressItems[1].querySelector('.progress-icon');
+        icon1.className = 'progress-icon';
+        icon1.innerHTML = '✓';
         progressItems[1].querySelector('.progress-text span').textContent = 'Vyhodnotené • 19/20 bodov';
         
         progressItems[2].classList.add('active');
-        progressItems[2].querySelector('.progress-icon').className = 'progress-icon spinner-small';
+        const icon2active = progressItems[2].querySelector('.progress-icon');
+        icon2active.className = 'progress-icon spinner-small';
+        icon2active.innerHTML = '';
         progressItems[2].querySelector('.progress-text span').textContent = 'Vyhodnocujem...';
         
         progress = 66;
@@ -263,7 +267,9 @@ function startGrading() {
     setTimeout(() => {
         progressItems[2].classList.remove('active');
         progressItems[2].classList.add('completed');
-        progressItems[2].querySelector('.progress-icon').innerHTML = '✓';
+        const icon2 = progressItems[2].querySelector('.progress-icon');
+        icon2.className = 'progress-icon';
+        icon2.innerHTML = '✓';
         progressItems[2].querySelector('.progress-text span').textContent = 'Vyhodnotené • 15/20 bodov';
         
         progress = 100;
@@ -334,16 +340,20 @@ function resetDemo() {
     const progressItems = document.querySelectorAll('.progress-item');
     progressItems.forEach((item, index) => {
         item.classList.remove('completed', 'active');
+        const icon = item.querySelector('.progress-icon');
         if (index === 0) {
             item.classList.add('completed');
-            item.querySelector('.progress-icon').innerHTML = '✓';
+            icon.className = 'progress-icon';
+            icon.innerHTML = '✓';
             item.querySelector('.progress-text span').textContent = 'Vyhodnotené • 18/20 bodov';
         } else if (index === 1) {
             item.classList.add('active');
-            item.querySelector('.progress-icon').className = 'progress-icon spinner-small';
+            icon.className = 'progress-icon spinner-small';
+            icon.innerHTML = '';
             item.querySelector('.progress-text span').textContent = 'Vyhodnocujem...';
         } else {
-            item.querySelector('.progress-icon').innerHTML = '⏳';
+            icon.className = 'progress-icon';
+            icon.innerHTML = '⏳';
             item.querySelector('.progress-text span').textContent = 'Čaká v rade';
         }
     });

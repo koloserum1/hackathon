@@ -392,15 +392,16 @@ body {
 .spinner {
     width: 60px;
     height: 60px;
-    border: 4px solid #e5e5e7;
-    border-top: 4px solid #007AFF;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
     margin: 0 auto 24px;
+    animation: pulse 2s ease-in-out infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.spinner::before {
+    content: '📝';
 }
 
 .loading-animation p {
@@ -884,10 +885,20 @@ body {
 .spinner-small {
     width: 40px;
     height: 40px;
-    border: 3px solid #e5e5e7;
-    border-top: 3px solid #007AFF;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.spinner-small::before {
+    content: '⚙️';
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.95); }
 }
 
 .progress-text {

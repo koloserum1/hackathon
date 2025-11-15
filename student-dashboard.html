@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Študent - EduAI</title>
+    <title>Študent Dashboard - EduAI</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -13,36 +13,48 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Domov
+                Späť
             </a>
-            <h1 class="header-title">Študent</h1>
-            <a href="login.html" class="logout-link">Odhlásiť</a>
+            <div class="header-logo">
+                <span class="logo-text">EduAI</span>
+            </div>
+            <a href="login.html" class="logout-link">Odhlásiť sa</a>
         </header>
         
         <main class="main-content">
             <div class="page-header">
-                <h2 class="page-title">Tvoje nástroje</h2>
-                <p class="page-subtitle">Vyber si, s čím ti môže AI pomôcť</p>
+                <div class="welcome-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                    Študent
+                </div>
+                <h2 class="page-title">Vitaj späť! 👋</h2>
+                <p class="page-subtitle">Vyber si nástroj, s ktorým ti môže AI pomôcť pri štúdiu</p>
             </div>
             
             <div class="cards-grid">
                 <div class="tool-card blue-card">
                     <div class="card-header">
                         <div class="icon-circle blue-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
                                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                             </svg>
                         </div>
                     </div>
                     <h3 class="card-title">Preopakovanie učiva</h3>
-                    <p class="card-description">Interaktívne opakovanie a upevňovanie látky</p>
+                    <p class="card-description">Interaktívne opakovanie látky s AI asistentom pre lepšie zapamätanie</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Začať →</span>
+                    </div>
                 </div>
                 
                 <div class="tool-card dark-card">
                     <div class="card-header">
                         <div class="icon-circle dark-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                                 <polyline points="14 2 14 8 20 8"/>
                                 <line x1="16" y1="13" x2="8" y2="13"/>
@@ -51,23 +63,28 @@
                         </div>
                     </div>
                     <h3 class="card-title">Učenie na testy</h3>
-                    <p class="card-description">Personalizovaný študijný plán pre tvoj úspech</p>
+                    <p class="card-description">Personalizovaný študijný plán a príprava na skúšky s AI</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Začať →</span>
+                    </div>
                 </div>
                 
                 <div class="tool-card blue-card">
                     <div class="card-header">
                         <div class="icon-circle blue-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                             </svg>
                         </div>
                     </div>
                     <h3 class="card-title">AI psychológ</h3>
-                    <p class="card-description">Podpora pri školskom strese a osobných otázkach</p>
+                    <p class="card-description">Dôverný rozhovor o strese, úzkosti a školských problémoch</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Začať →</span>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
 </body>
 </html>
-

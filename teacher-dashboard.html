@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Učiteľ - EduAI</title>
+    <title>Učiteľ Dashboard - EduAI</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -13,36 +13,50 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Domov
+                Späť
             </a>
-            <h1 class="header-title">Učiteľ</h1>
-            <a href="login.html" class="logout-link">Odhlásiť</a>
+            <div class="header-logo">
+                <span class="logo-text">EduAI</span>
+            </div>
+            <a href="login.html" class="logout-link">Odhlásiť sa</a>
         </header>
         
         <main class="main-content">
             <div class="page-header">
-                <h2 class="page-title">Vaše nástroje</h2>
-                <p class="page-subtitle">Vyberte si, s čím vám môže AI pomôcť</p>
+                <div class="welcome-badge teacher-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    Učiteľ
+                </div>
+                <h2 class="page-title">Vitajte späť! 👋</h2>
+                <p class="page-subtitle">AI nástroje pre efektívnejšie učenie a lepšiu organizáciu</p>
             </div>
             
             <div class="cards-grid teacher-grid">
                 <div class="tool-card dark-card">
                     <div class="card-header">
                         <div class="icon-circle dark-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
                         </div>
                     </div>
                     <h3 class="card-title">Odpisovanie rodičom</h3>
-                    <p class="card-description">Profesionálne odpovede na správy od rodičov</p>
+                    <p class="card-description">AI vám pomôže napísať profesionálne odpovede na správy</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Otvoriť →</span>
+                    </div>
                 </div>
                 
                 <div class="tool-card blue-card">
                     <div class="card-header">
                         <div class="icon-circle blue-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                                 <line x1="16" y1="2" x2="16" y2="6"/>
                                 <line x1="8" y1="2" x2="8" y2="6"/>
@@ -52,12 +66,15 @@
                     </div>
                     <h3 class="card-title">Suplovanie</h3>
                     <p class="card-description">Rýchla príprava kvalitných náhradných hodín</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Otvoriť →</span>
+                    </div>
                 </div>
                 
                 <div class="tool-card dark-card">
                     <div class="card-header">
                         <div class="icon-circle dark-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                                 <polyline points="14 2 14 8 20 8"/>
                                 <line x1="12" y1="18" x2="12" y2="12"/>
@@ -66,39 +83,48 @@
                         </div>
                     </div>
                     <h3 class="card-title">Príprava písomky</h3>
-                    <p class="card-description">Tvorba testov podľa osnov a náročnosti</p>
+                    <p class="card-description">Vytvorte test s pomocou AI podľa osnov a náročnosti</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Otvoriť →</span>
+                    </div>
                 </div>
                 
                 <div class="tool-card blue-card">
                     <div class="card-header">
                         <div class="icon-circle blue-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
                                 <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
                             </svg>
                         </div>
                     </div>
                     <h3 class="card-title">Nové verzie písomky</h3>
-                    <p class="card-description">Rôzne verzie testov s rovnakou náročnosťou</p>
+                    <p class="card-description">Generujte rôzne verzie s rovnakou náročnosťou</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Otvoriť →</span>
+                    </div>
                 </div>
                 
                 <a href="test-grading.html" class="tool-card dark-card" style="text-decoration: none;">
                     <div class="card-header">
                         <div class="icon-circle dark-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="9 11 12 14 22 4"/>
                                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
                             </svg>
                         </div>
                     </div>
                     <h3 class="card-title">Opravovanie testov</h3>
-                    <p class="card-description">Rýchlejšie hodnotenie a konštruktívna spätná väzba</p>
+                    <p class="card-description">Automatické hodnotenie a konštruktívna spätná väzba</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Otvoriť →</span>
+                    </div>
                 </a>
                 
                 <div class="tool-card blue-card">
                     <div class="card-header">
                         <div class="icon-circle blue-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                                 <circle cx="9" cy="7" r="4"/>
                                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
@@ -108,19 +134,25 @@
                     </div>
                     <h3 class="card-title">Začlenenie detí</h3>
                     <p class="card-description">Prispôsobenie pre deti so špeciálnymi potrebami</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Otvoriť →</span>
+                    </div>
                 </div>
                 
                 <div class="tool-card dark-card">
                     <div class="card-header">
                         <div class="icon-circle dark-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="3"/>
                                 <path d="M12 1v6m0 6v6M1 12h6m6 0h6"/>
                             </svg>
                         </div>
                     </div>
                     <h3 class="card-title">Personalizácia učiva</h3>
-                    <p class="card-description">Individuálne tempo a potreby každého študenta</p>
+                    <p class="card-description">Individuálne tempo pre každého študenta</p>
+                    <div class="card-footer">
+                        <span class="card-hint">Otvoriť →</span>
+                    </div>
                 </div>
             </div>
         </main>

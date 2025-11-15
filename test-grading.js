@@ -85,20 +85,15 @@ function handleDrop(e) {
         const validTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
         
         if (validTypes.includes(file.type)) {
-            // Update the file input with the dropped file
-            const fileInput = document.getElementById('file-input');
-            fileInput.files = files;
-            showPreview();
+            // Show preview with the dropped file
+            showPreviewWithFile(file);
         } else {
             alert('Prosím nahrajte súbor vo formáte PDF, JPG alebo PNG');
         }
     }
 }
 
-function showPreview() {
-    const fileInput = document.getElementById('file-input');
-    const file = fileInput.files[0];
-    
+function showPreviewWithFile(file) {
     if (!file) return;
     
     const uploadArea = document.querySelector('.upload-area');
@@ -142,6 +137,15 @@ function showPreview() {
     
     uploadArea.style.display = 'none';
     preview.classList.remove('hidden');
+}
+
+function showPreview() {
+    const fileInput = document.getElementById('file-input');
+    const file = fileInput.files[0];
+    
+    if (!file) return;
+    
+    showPreviewWithFile(file);
 }
 
 function removeFile() {
@@ -208,8 +212,7 @@ function handleStudentDrop(e) {
     const files = dt.files;
     
     if (files.length > 0) {
-        const studentFileInput = document.getElementById('student-file-input');
-        studentFileInput.files = files;
+        // Just show the uploaded tests demo
         showUploadedTests();
     }
 }

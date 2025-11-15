@@ -101,39 +101,49 @@ function showPreviewWithFile(file) {
     const previewContainer = document.getElementById('preview-container');
     const fileNameDisplay = document.getElementById('file-name-display');
     
-    // Update file name
-    fileNameDisplay.textContent = file.name;
+    // Always show demo filename
+    fileNameDisplay.textContent = 'test_matematika_kvadraticke_rovnice.pdf';
     
     // Clear previous preview
     previewContainer.innerHTML = '';
     
-    // Check if file is an image
-    if (file.type.startsWith('image/')) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.style.width = '100%';
-            img.style.height = 'auto';
-            img.style.borderRadius = '12px';
-            img.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-            previewContainer.appendChild(img);
-        };
-        reader.readAsDataURL(file);
-    } else if (file.type === 'application/pdf') {
-        // For PDF, show a placeholder with file info
-        const pdfPlaceholder = document.createElement('div');
-        pdfPlaceholder.className = 'pdf-placeholder';
-        pdfPlaceholder.innerHTML = `
-            <div style="text-align: center; padding: 60px 20px; background: #f5f5f7; border-radius: 12px;">
-                <div style="font-size: 64px; margin-bottom: 16px;">📄</div>
-                <h3 style="color: #1d1d1f; margin-bottom: 8px;">${file.name}</h3>
-                <p style="color: #86868b; font-size: 14px;">PDF súbor • ${(file.size / 1024 / 1024).toFixed(2)} MB</p>
-                <p style="color: #86868b; font-size: 14px; margin-top: 16px;">Náhľad bude dostupný po spracovaní</p>
-            </div>
-        `;
-        previewContainer.appendChild(pdfPlaceholder);
-    }
+    // Always show the same demo worksheet (simulation)
+    const demoWorksheet = document.createElement('div');
+    demoWorksheet.className = 'mock-test';
+    demoWorksheet.style.width = '100%';
+    demoWorksheet.style.padding = '40px';
+    demoWorksheet.style.background = 'white';
+    demoWorksheet.style.borderRadius = '8px';
+    demoWorksheet.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+    demoWorksheet.style.fontFamily = "'Times New Roman', serif";
+    demoWorksheet.innerHTML = `
+        <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333;">
+            <h2 style="margin: 0 0 10px 0; font-size: 1.8rem; color: #1d1d1f;">Test z matematiky</h2>
+            <p style="margin: 0; font-size: 1.1rem; color: #666;">Kvadratické rovnice</p>
+            <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #999;">Meno: ________________  Dátum: ________________</p>
+        </div>
+        
+        <div style="margin-bottom: 40px;">
+            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #333;">1. Vyriešte rovnicu: x² + 5x + 6 = 0 (5 bodov)</h3>
+            <div style="height: 100px; border: 1px solid #ddd; border-radius: 4px; background: #fafafa;"></div>
+        </div>
+        
+        <div style="margin-bottom: 40px;">
+            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #333;">2. Vypočítajte diskriminant rovnice: 2x² - 3x + 1 = 0 (7 bodov)</h3>
+            <div style="height: 120px; border: 1px solid #ddd; border-radius: 4px; background: #fafafa;"></div>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #333;">3. Slovná úloha: Obdĺžnik má obvod 24 cm a jeho obsah je 35 cm². Vypočítajte rozmery obdĺžnika. (8 bodov)</h3>
+            <div style="height: 140px; border: 1px solid #ddd; border-radius: 4px; background: #fafafa;"></div>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; text-align: right; color: #666;">
+            <p style="margin: 0;">Celkový počet bodov: 20</p>
+        </div>
+    `;
+    
+    previewContainer.appendChild(demoWorksheet);
     
     uploadArea.style.display = 'none';
     preview.classList.remove('hidden');

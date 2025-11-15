@@ -96,8 +96,49 @@ function handleDrop(e) {
 }
 
 function showPreview() {
+    const fileInput = document.getElementById('file-input');
+    const file = fileInput.files[0];
+    
+    if (!file) return;
+    
     const uploadArea = document.querySelector('.upload-area');
     const preview = document.getElementById('test-preview');
+    const previewContainer = document.getElementById('preview-container');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    
+    // Update file name
+    fileNameDisplay.textContent = file.name;
+    
+    // Clear previous preview
+    previewContainer.innerHTML = '';
+    
+    // Check if file is an image
+    if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.width = '100%';
+            img.style.height = 'auto';
+            img.style.borderRadius = '12px';
+            img.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    } else if (file.type === 'application/pdf') {
+        // For PDF, show a placeholder with file info
+        const pdfPlaceholder = document.createElement('div');
+        pdfPlaceholder.className = 'pdf-placeholder';
+        pdfPlaceholder.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px; background: #f5f5f7; border-radius: 12px;">
+                <div style="font-size: 64px; margin-bottom: 16px;">📄</div>
+                <h3 style="color: #1d1d1f; margin-bottom: 8px;">${file.name}</h3>
+                <p style="color: #86868b; font-size: 14px;">PDF súbor • ${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                <p style="color: #86868b; font-size: 14px; margin-top: 16px;">Náhľad bude dostupný po spracovaní</p>
+            </div>
+        `;
+        previewContainer.appendChild(pdfPlaceholder);
+    }
     
     uploadArea.style.display = 'none';
     preview.classList.remove('hidden');
@@ -106,10 +147,15 @@ function showPreview() {
 function removeFile() {
     const uploadArea = document.querySelector('.upload-area');
     const preview = document.getElementById('test-preview');
+    const previewContainer = document.getElementById('preview-container');
     
     uploadArea.style.display = 'block';
     preview.classList.add('hidden');
     
+    // Clear preview
+    previewContainer.innerHTML = '';
+    
+    // Reset file input
     document.getElementById('file-input').value = '';
 }
 

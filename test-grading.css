@@ -331,9 +331,21 @@ body {
 .preview-image {
     background: white;
     border-radius: 12px;
-    padding: 24px;
+    padding: 16px;
     border: 1px solid #e5e5e7;
     margin-bottom: 24px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.preview-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mock-test {

@@ -42,7 +42,64 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Drag and drop functionality
+    const uploadArea = document.querySelector('.upload-area');
+    if (uploadArea) {
+        // Prevent default drag behaviors
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, preventDefaults, false);
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        // Highlight drop area when item is dragged over it
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, unhighlight, false);
+        });
+        
+        // Handle dropped files
+        uploadArea.addEventListener('drop', handleDrop, false);
+    }
 });
+
+function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+function highlight(e) {
+    const uploadArea = document.querySelector('.upload-area');
+    uploadArea.classList.add('drag-over');
+}
+
+function unhighlight(e) {
+    const uploadArea = document.querySelector('.upload-area');
+    uploadArea.classList.remove('drag-over');
+}
+
+function handleDrop(e) {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+    
+    if (files.length > 0) {
+        // Validate file type
+        const file = files[0];
+        const validTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
+        
+        if (validTypes.includes(file.type)) {
+            // Update the file input with the dropped file
+            const fileInput = document.getElementById('file-input');
+            fileInput.files = files;
+            showPreview();
+        } else {
+            alert('Prosím nahrajte súbor vo formáte PDF, JPG alebo PNG');
+        }
+    }
+}
 
 function showPreview() {
     const uploadArea = document.querySelector('.upload-area');
@@ -85,7 +142,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Drag and drop for student uploads (Step 5)
+    const uploadZone = document.querySelector('.upload-zone');
+    if (uploadZone) {
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadZone.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadZone.addEventListener(eventName, highlightZone, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadZone.addEventListener(eventName, unhighlightZone, false);
+        });
+        
+        uploadZone.addEventListener('drop', handleStudentDrop, false);
+    }
 });
+
+function highlightZone(e) {
+    const uploadZone = document.querySelector('.upload-zone');
+    uploadZone.classList.add('drag-over');
+}
+
+function unhighlightZone(e) {
+    const uploadZone = document.querySelector('.upload-zone');
+    uploadZone.classList.remove('drag-over');
+}
+
+function handleStudentDrop(e) {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+    
+    if (files.length > 0) {
+        const studentFileInput = document.getElementById('student-file-input');
+        studentFileInput.files = files;
+        showUploadedTests();
+    }
+}
 
 function showUploadedTests() {
     const uploadZone = document.querySelector('.upload-zone');

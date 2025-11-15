@@ -265,17 +265,36 @@ body {
     padding: 60px 40px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .upload-area:hover {
     border-color: #007AFF;
     background: #f8f9ff;
+    transform: scale(1.01);
+}
+
+.upload-area.drag-over {
+    border-color: #007AFF;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+    border-width: 3px;
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.15);
+}
+
+.upload-area.drag-over svg {
+    color: #007AFF;
+    transform: scale(1.1);
+}
+
+.upload-area.drag-over h3 {
+    color: #007AFF;
 }
 
 .upload-area svg {
     color: #86868b;
     margin-bottom: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .upload-area h3 {
@@ -696,18 +715,37 @@ body {
     padding: 40px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 24px;
 }
 
 .upload-zone:hover {
     border-color: #007AFF;
     background: #f8f9ff;
+    transform: scale(1.01);
+}
+
+.upload-zone.drag-over {
+    border-color: #007AFF;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+    border-width: 3px;
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.15);
+}
+
+.upload-zone.drag-over svg {
+    color: #007AFF;
+    transform: scale(1.1);
+}
+
+.upload-zone.drag-over p {
+    color: #007AFF;
 }
 
 .upload-zone svg {
     color: #86868b;
     margin-bottom: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .upload-zone p {

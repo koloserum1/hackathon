@@ -17,7 +17,7 @@
             </a>
             <h1 class="header-title">Opravovanie testov</h1>
             <div class="step-indicator">
-                <span class="current-step">Krok <span id="current-step-num">1</span>/7</span>
+                <span class="current-step">Krok <span id="current-step-num">1</span>/6</span>
             </div>
         </header>
         
@@ -86,53 +86,12 @@
                             <div class="mock-space-large"></div>
                         </div>
                     </div>
-                    <button class="primary-btn" onclick="nextStep()">Pokračovať s AI analýzou</button>
+                    <button class="primary-btn" onclick="nextStep()">Pokračovať na nastavenie</button>
                 </div>
             </div>
 
-            <!-- Step 3: AI detekcia úloh -->
+            <!-- Step 3: Konfigurácia bodov a rubric -->
             <div class="step" id="step-3">
-                <div class="step-header">
-                    <h2 class="step-title">AI analyzuje test</h2>
-                    <p class="step-subtitle">Rozpoznávanie úloh a štruktúry testu</p>
-                </div>
-                
-                <div class="analysis-container">
-                    <div class="loading-animation">
-                        <div class="spinner"></div>
-                        <p>Analyzujem test...</p>
-                    </div>
-                    
-                    <div class="detection-results hidden" id="detection-results">
-                        <div class="success-badge">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Detekcia dokončená
-                        </div>
-                        
-                        <div class="detected-items">
-                            <div class="detected-item">
-                                <span class="item-icon">✓</span>
-                                <span>Rozpoznané <strong>3 úlohy</strong></span>
-                            </div>
-                            <div class="detected-item">
-                                <span class="item-icon">✓</span>
-                                <span>Identifikované <strong>odpoveďové polia</strong></span>
-                            </div>
-                            <div class="detected-item">
-                                <span class="item-icon">✓</span>
-                                <span>Načítaný <strong>názov testu</strong></span>
-                            </div>
-                        </div>
-                        
-                        <button class="primary-btn" onclick="nextStep()">Pokračovať na nastavenie</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 4: Konfigurácia bodov a rubric -->
-            <div class="step" id="step-4">
                 <div class="step-header">
                     <h2 class="step-title">Nastavenie hodnotenia</h2>
                     <p class="step-subtitle">Definujte body za úlohy a kritériá hodnotenia</p>
@@ -290,8 +249,8 @@
                 </div>
             </div>
 
-            <!-- Step 5: Upload študentských testov -->
-            <div class="step" id="step-5">
+            <!-- Step 4: Upload študentských testov -->
+            <div class="step" id="step-4">
                 <div class="step-header">
                     <h2 class="step-title">Nahrajte vyplnené testy</h2>
                     <p class="step-subtitle">Naskenujte alebo odfotografujte vypracované testy študentov</p>
@@ -344,8 +303,8 @@
                 </div>
             </div>
 
-            <!-- Step 6: AI vyhodnotenie -->
-            <div class="step" id="step-6">
+            <!-- Step 5: AI vyhodnotenie -->
+            <div class="step" id="step-5">
                 <div class="step-header">
                     <h2 class="step-title">AI vyhodnocuje testy</h2>
                     <p class="step-subtitle">Automatické opravovanie a generovanie feedbacku</p>
@@ -387,8 +346,8 @@
                 </div>
             </div>
 
-            <!-- Step 7: Výsledky -->
-            <div class="step" id="step-7">
+            <!-- Step 6: Výsledky -->
+            <div class="step" id="step-6">
                 <div class="step-header">
                     <h2 class="step-title">Výsledky hodnotenia</h2>
                     <p class="step-subtitle">Všetky testy boli úspešne vyhodnotené</p>

@@ -14,13 +14,7 @@ function nextStep() {
     document.getElementById('current-step-num').textContent = currentStep;
     
     // Trigger animations for specific steps
-    if (currentStep === 3) {
-        setTimeout(() => {
-            completeAnalysis();
-        }, 2000);
-    }
-    
-    if (currentStep === 6) {
+    if (currentStep === 5) {
         startGrading();
     }
     
@@ -119,16 +113,7 @@ function removeFile() {
     document.getElementById('file-input').value = '';
 }
 
-// Complete analysis animation
-function completeAnalysis() {
-    const loading = document.querySelector('.loading-animation');
-    const results = document.getElementById('detection-results');
-    
-    loading.style.display = 'none';
-    results.classList.remove('hidden');
-}
-
-// Student upload simulation for step 5
+// Student upload simulation for step 4
 function triggerStudentUpload() {
     document.getElementById('student-file-input').click();
 }
@@ -271,15 +256,7 @@ function resetDemo() {
         preview.classList.add('hidden');
     }
     
-    // Reset step 3
-    const loading = document.querySelector('.loading-animation');
-    const detectionResults = document.getElementById('detection-results');
-    if (loading && detectionResults) {
-        loading.style.display = 'block';
-        detectionResults.classList.add('hidden');
-    }
-    
-    // Reset step 5
+    // Reset step 4
     const uploadZone = document.querySelector('.upload-zone');
     const uploadedTests = document.getElementById('uploaded-tests');
     if (uploadZone && uploadedTests) {
@@ -287,7 +264,7 @@ function resetDemo() {
         uploadedTests.classList.add('hidden');
     }
     
-    // Reset step 6
+    // Reset step 5
     const progressFill = document.getElementById('progress-fill');
     const progressPercent = document.getElementById('progress-percent');
     if (progressFill && progressPercent) {
@@ -319,9 +296,9 @@ function resetDemo() {
 // Keyboard navigation
 document.addEventListener('keydown', function(e) {
     // Right arrow or Enter for next step (except on last step)
-    if ((e.key === 'ArrowRight' || e.key === 'Enter') && currentStep < 7) {
+    if ((e.key === 'ArrowRight' || e.key === 'Enter') && currentStep < 6) {
         // Only auto-advance on certain steps
-        if (currentStep === 1 || currentStep === 4 || currentStep === 5) {
+        if (currentStep === 1 || currentStep === 3 || currentStep === 4) {
             // Don't auto-advance, user needs to click button
             return;
         }
